@@ -206,37 +206,44 @@ puts
 # Returns a file object for writing
 write_handler = File.new("LRIOV.txt", "w")
 # Put text into the file
-write_handler.puts("Look what I learned today!").to_s
+write_handler.puts("Look what I learned today!").to_s #WHY DO I NEED TO MAKE THIS A STRING?
 # ALWAYS REMEMBER TO CLOSE THE FILE
 write_handler.close
 # Read data from the defined file
 data_from_file = File.read("LRIOV.txt")
 puts "Data from file: " + data_from_file
+# NOW I am gonna make the file used in the next lesson:
+textual_healing = File.new("RubyOrNotRuby.rb", "w")
+textual_healing.puts('puts "Hello from RubyOrNotRuby.rb"').to_s
+textual_healing.close
+data_from_txt_heal = File.read("RubyOrNotRuby.rb")
+puts "Data from another file: " + data_from_txt_heal
 
 
 
 # # # Load Ruby File 6:56
 puts
 puts
-puts "**********X**********"
+puts "**********LOADING A RUBY FILE**********"
 puts
 puts
-
+# Use "load" to execute the code in another Ruby file
+load "RubyOrNotRuby.rb"
 
 
 # # # Multiline Comment 7:27
-puts
-puts
-puts "**********X**********"
-puts
-puts
+=begin
+multiline comments in your script
+start with "=begin"
+and end with
+=end
 
 
 
 # # # If Elsif Else 7:42
 puts
 puts
-puts "**********X**********"
+puts "**********IF ELSIF ELSE**********"
 puts
 puts
 
@@ -245,7 +252,7 @@ puts
 # # # Comparison Operators 8:45
 puts
 puts
-puts "**********X**********"
+puts "**********COMPARISON OPERATORS**********"
 puts
 puts
 
@@ -254,7 +261,7 @@ puts
 # # # Logical Operators 8:59
 puts
 puts
-puts "**********X**********"
+puts "**********LOGICAL OPERATORS**********"
 puts
 puts
 
@@ -263,7 +270,7 @@ puts
 # # # Unless 10:19
 puts
 puts
-puts "**********X**********"
+puts "**********UNLESS**********"
 puts
 puts
 
@@ -272,7 +279,7 @@ puts
 # # # Case 10:58
 puts
 puts
-puts "**********X**********"
+puts "**********CASE**********"
 puts
 puts
 
@@ -281,7 +288,7 @@ puts
 # # # Ternary Operator 12:14
 puts
 puts
-puts "**********X**********"
+puts "**********TERNARY OPERATORS**********"
 puts
 puts
 
@@ -290,7 +297,7 @@ puts
 # # # Loop Next Break 12:19
 puts
 puts
-puts "**********X**********"
+puts "**********LOOP NEXT BREAK**********"
 puts
 puts
 
@@ -299,7 +306,7 @@ puts
 # # # While 14:21
 puts
 puts
-puts "**********X**********"
+puts "**********WHILE**********"
 puts
 puts
 
@@ -308,7 +315,7 @@ puts
 # # # Until 15:09
 puts
 puts
-puts "**********X**********"
+puts "**********UNTIL**********"
 puts
 puts
 
@@ -317,7 +324,7 @@ puts
 # # # For Loops 15:48
 puts
 puts
-puts "**********X**********"
+puts "**********FOR LOOPS**********"
 puts
 puts
 
@@ -326,7 +333,7 @@ puts
 # # # Each 16:40
 puts
 puts
-puts "**********X**********"
+puts "**********EACH**********"
 puts
 puts
 
@@ -335,7 +342,7 @@ puts
 # # # Functions 17:54
 puts
 puts
-puts "**********X**********"
+puts "**********FUNCTIONS**********"
 puts
 puts
 
@@ -344,7 +351,7 @@ puts
 # # # Exception Handling 19:28
 puts
 puts
-puts "**********X**********"
+puts "**********EXCEPTION HANDLING**********"
 puts
 puts
 
@@ -353,7 +360,7 @@ puts
 # # # Strings 21:47
 puts
 puts
-puts "**********X**********"
+puts "**********STRINGS**********"
 puts
 puts
 
@@ -362,7 +369,7 @@ puts
 # # # Chop Chomp 27:45
 puts
 puts
-puts "**********X**********"
+puts "**********CHOP CHOMP**********"
 puts
 puts
 
@@ -371,7 +378,7 @@ puts
 # # # Class Objects 29:29
 puts
 puts
-puts "**********X**********"
+puts "**********CLASS OBJECTS**********"
 puts
 puts
 
@@ -380,7 +387,7 @@ puts
 # # # Inheritance 33:19
 puts
 puts
-puts "**********X**********"
+puts "**********INHERITANCE**********"
 puts
 puts
 
@@ -389,7 +396,7 @@ puts
 # # # Modules 34:23
 puts
 puts
-puts "**********X**********"
+puts "**********MODULES**********"
 puts
 puts
 
@@ -398,7 +405,7 @@ puts
 # # # Polymorphism 38:20
 puts
 puts
-puts "**********X**********"
+puts "**********POLYMORPHISM**********"
 puts
 puts
 
@@ -407,7 +414,7 @@ puts
 # # # Symbols 40:11
 puts
 puts
-puts "**********X**********"
+puts "**********SYMBOLS**********"
 puts
 puts
 
@@ -416,7 +423,7 @@ puts
 # # # Arrays 41:26
 puts
 puts
-puts "**********X**********"
+puts "**********ARRAYS**********"
 puts
 puts
 
@@ -425,7 +432,7 @@ puts
 # # # Hashes 45:43
 puts
 puts
-puts "**********X**********"
+puts "**********HASHES**********"
 puts
 puts
 
@@ -434,7 +441,7 @@ puts
 # # # Enumerables 49:21
 puts
 puts
-puts "**********X**********"
+puts "**********ENUMERABLES**********"
 puts
 puts
 
@@ -443,9 +450,15 @@ puts
 # # # File I/O 52:05
 puts
 puts
-puts "**********X**********"
+puts "**********FILE I/O**********"
 puts
 puts
 
 
+
+
+
+=begin
+The End.
+=end
 
