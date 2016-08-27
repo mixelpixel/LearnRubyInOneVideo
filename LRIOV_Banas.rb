@@ -6,7 +6,7 @@
 Ruby is a dynamic, interpreted, object-oriented language
 Everything is an object and all of those objects can be overwritten(?what does this mean?)
 =end
-
+# https://www.ruby-lang.org/en/
 
 
 # print prints the string to screen WITHOUT a newline
@@ -118,7 +118,8 @@ last_num = gets.to_i
 puts "Adding the first number you entered and this last one:"
 puts first_num.to_s + " + " + last_num.to_s + " = " +
   (first_num + last_num).to_s
-sleep(1) #SLEEPY TIME!
+sleep(1) # SLEEPY TIME!
+puts "\a" # Bell - Wake Up!
 
 
 
@@ -183,9 +184,10 @@ puts a.class # <-- "Classy" - neat, huh?
 module Modularity
 end
 puts Modularity # <-- "Modularity"\
+# http://ruby-doc.org/stdlib-2.3.1/libdoc/set/rdoc/Set.html
 require 'set'
 s = Set.new
-puts s.class
+puts s.class # <-- "Set"
 
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
@@ -195,35 +197,255 @@ puts A_CONSTANT
 
 
 
-
-
-
-
-
 # # # Basic File I/O 5:52
+puts
+puts
+puts "**********BASIC FILE I/O**********"
+puts
+puts
+# Returns a file object for writing
+write_handler = File.new("LRIOV.txt", "w")
+# Put text into the file
+write_handler.puts("Look what I learned today!").to_s
+# ALWAYS REMEMBER TO CLOSE THE FILE
+write_handler.close
+# Read data from the defined file
+data_from_file = File.read("LRIOV.txt")
+puts "Data from file: " + data_from_file
+
+
+
 # # # Load Ruby File 6:56
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Multiline Comment 7:27
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # If Elsif Else 7:42
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Comparison Operators 8:45
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Logical Operators 8:59
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Unless 10:19
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Case 10:58
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Ternary Operator 12:14
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Loop Next Break 12:19
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # While 14:21
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Until 15:09
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # For Loops 15:48
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Each 16:40
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Functions 17:54
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Exception Handling 19:28
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Strings 21:47
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Chop Chomp 27:45
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Class Objects 29:29
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Inheritance 33:19
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Modules 34:23
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Polymorphism 38:20
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Symbols 40:11
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Arrays 41:26
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Hashes 45:43
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # Enumerables 49:21
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
 # # # File I/O 52:05
+puts
+puts
+puts "**********X**********"
+puts
+puts
+
+
+
