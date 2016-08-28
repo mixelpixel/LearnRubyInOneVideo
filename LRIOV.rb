@@ -382,6 +382,7 @@ end
 puts
 puts
 puts "**********WHILE**********"
+puts "**********& BEGIN**********"
 puts
 puts
 # Do stuff while the condition is met
@@ -390,11 +391,13 @@ y = 1
 
 while y <= 10
   y += 1
-  next unless (y % 2) ==0
+  next unless (y % 2) == 0
   puts y
   break if y >= 10
 end
+
 puts
+
 z = 1
 
 begin
@@ -412,6 +415,15 @@ puts
 puts "**********UNTIL**********"
 puts
 puts
+# Do stuff until a condition is met
+
+a = 1
+
+until a >= 10
+  a += 1
+  next unless (a % 2) == 0
+  puts a
+end
 
 
 
@@ -422,14 +434,55 @@ puts "**********FOR LOOPS**********"
 puts
 puts
 
+numbers = 1,2,3,4,5
+# p numbers # Interesting: two ways to assign arrays
+# puts numbers # NOTE that p shows the array
+# puts numbers.class # and puts puts each number on a new line
+# nums = [1,2,3,4,5]
+# p nums
+# puts nums
+# print nums # and print prints the array (with no newline)
+# puts nums.class
+for number in numbers
+  puts "#{number}, "
+end
+
+for number in numbers
+  print "#{number}, "
+end
+
+puts
+
+for number in numbers
+  puts "#%s, " % number
+end
+
 
 
 # # # Each 16:40
 puts
 puts
-puts "**********EACH**********"
+puts "**********EACH DO |x|**********"
 puts
 puts
+
+groceries = ["bananas", "sweet potatoes", "pasta", "tomatoes"]
+
+groceries.each do |food|
+  puts "Get some #{food}"
+end
+
+puts
+
+(0..5).each do |i|
+  puts "# #{i}"
+end
+
+puts
+
+(0...5).each do |i|
+  puts "# #{i}"
+end
 
 
 
@@ -439,6 +492,28 @@ puts
 puts "**********FUNCTIONS**********"
 puts
 puts
+# Functions start with def, function name, parameters if any
+# They can return, or not a value, and generally do something
+# and then end with "end"
+def add_nums(num_1, num_2)
+  return num_1.to_i + num_2.to_i
+end
+
+puts "Three plus four equals: " + add_nums(3, 4).to_s
+puts
+
+# Variables arw passed by value so they're value can't be changed in a function
+x = 1
+puts "'x' equals: " + x.to_s
+puts
+def change_x(x)
+  x = 4        # THIS IS A LOCAL INSTANCE OF "x"
+  puts "Inside the function 'x' equals: " + x.to_s
+end
+
+change_x(x)
+puts
+puts "x still = #{x}"
 
 
 
@@ -446,8 +521,42 @@ puts
 puts
 puts
 puts "**********EXCEPTION HANDLING**********"
+puts "**********BEGIN, RESCUE & RAISE**********"
 puts
 puts
+# We can catch Exceptions in Ruby with BEGIN and RESCUE
+print "Enter a number: "
+first_num = gets.to_i
+print "Enter another number (hint: try zero): "
+second_num = gets.to_i
+puts
+puts first_num
+puts second_num
+puts
+
+begin
+  answer = first_num / second_num
+
+rescue # NOTE: could also use rescue ZeroDivisionError
+  puts "You can't divide by zero"
+  # exit # optional
+end
+
+puts "#{first_num} / #{second_num} = #{answer}"
+
+# Also, we can throw our own exceptions with RAISE
+age = 12
+
+def check_age(age)
+  raise ArgumentError, "Enter Positive Number" unless age > 0
+end
+
+# And then catch them with RESCUE
+begin
+  check_age(-1)
+rescue ArgumentError
+  puts "That is an impossible age"
+end
 
 
 
@@ -455,8 +564,52 @@ puts
 puts
 puts
 puts "**********STRINGS**********"
+puts "**********HERE-DOC**********"
 puts
 puts
+# Strings are a series of characters between " or '
+# String interpolation doesn't work with '' and neither do backslash
+# characters like newline
+ 
+puts "Add Them #{4 + 5} \n\n"
+puts
+puts 'Add Them #{4 + 5} \n\n'
+puts
+
+# A here-doc is normally used when you want a multiline string
+ 
+multiline_string = <<EOM
+This is a very long string
+that contains interpolation
+like #{4 + 5} \n\n
+EOM
+ 
+puts multiline_string
+ 
+# ---------------------------------------
+ 
+# Find all string methods by typing irb in terminal and "string".methods
+=begin
+irb(main):004:0> "string".methods
+=> [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size, :bytesize,
+:empty?, :=~, :match, :succ, :succ!, :next, :next!, :upto, :index, :rindex, :replace, :clear, :chr,
+:getbyte, :setbyte, :byteslice, :scrub, :scrub!, :freeze, :to_i, :to_f, :to_s, :to_str, :inspect,
+:dump, :upcase, :downcase, :capitalize, :swapcase, :upcase!, :downcase!, :capitalize!, :swapcase!,
+:hex, :oct, :split, :lines, :bytes, :chars, :codepoints, :reverse, :reverse!, :concat, :<<, :prepend,
+:crypt, :intern, :to_sym, :ord, :include?, :start_with?, :end_with?, :scan, :ljust, :rjust, :center,
+:sub, :gsub, :chop, :chomp, :strip, :lstrip, :rstrip, :sub!, :gsub!, :chop!, :chomp!, :strip!,
+:lstrip!, :rstrip!, :tr, :tr_s, :delete, :squeeze, :count, :tr!, :tr_s!, :delete!, :squeeze!,
+:each_line, :each_byte, :each_char, :each_codepoint, :sum, :slice, :slice!, :partition, :rpartition,
+:encoding, :force_encoding, :b, :valid_encoding?, :ascii_only?, :unpack, :encode, :encode!, :to_r,
+:to_c, :unicode_normalize, :unicode_normalize!, :unicode_normalized?, :>, :>=, :<, :<=, :between?,
+:nil?, :!~, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust,
+:untrusted?, :trust, :frozen?, :methods, :singleton_methods, :protected_methods, :private_methods,
+:public_methods, :instance_variables, :instance_variable_get, :instance_variable_set,
+:instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :tap, :send,
+:public_send, :respond_to?, :extend, :display, :method, :public_method, :singleton_method,
+:define_singleton_method, :object_id, :to_enum, :enum_for, :equal?, :!, :!=, :instance_eval,
+:instance_exec,:__send__, :__id__]
+=end
 
 
 
