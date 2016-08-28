@@ -241,13 +241,23 @@ and end with
 
 
 # # # If Elsif Else 7:42
+# Comparison Operators : == != < > <= >=
+# Logical Operators : && || ! (and, or, not)
+# NOTE: follow ELSE statements witth END!!!
 puts
 puts
 puts "**********IF ELSIF ELSE**********"
 puts
 puts
-
-
+age = 12
+if (age >= 5) && (age <= 6)
+  puts "You're in Kindergarten"
+elsif (age >= 7) && (age <= 13)
+  puts "You are in middle school"
+  puts "Yay!"
+else
+  puts "Stay Home!"
+end
 
 # # # Comparison Operators 8:45
 puts
