@@ -158,7 +158,7 @@ puts big_float.to_s + " + \n0.00000000000005 = \n__________________\n" +
      
 
 # # # Constants 5:23
-# NOTES ON TYPE v CLASS
+# NOTE: NOTES ON TYPE v CLASS
 # http://stackoverflow.com/questions/15769739/determining-type-of-an-object-in-ruby
 puts
 puts
@@ -172,28 +172,32 @@ puts "A String".class # <-- "String"
 puts true.class # <-- "TrueClass"
 puts false.class # <-- "FalseClass"
 puts [1,2,3].class # <-- "Array"
-# NOTES ON COLLECTION TYPES IN RUBY (Sets, 'Tuples', etc.)
+# NOTE: NOTES ON COLLECTION TYPES IN RUBY (Sets, 'Tuples', etc.)
 # http://6ftdan.com/allyourdev/2015/03/26/different-collection-types-in-ruby/
 hash_map = {1 => 'a', 2 => 'b', 3 => 'c'}
 puts hash_map.class # <-- "Hash"
+
 class Classy
 end
 a = Classy.new()
 puts Classy.class # <-- "Class"
 puts a.class # <-- "Classy" - neat, huh?
+
 module Modularity
 end
 puts Modularity # <-- "Modularity"\
+
 # http://ruby-doc.org/stdlib-2.3.1/libdoc/set/rdoc/Set.html
 require 'set'
 s = Set.new
 puts s.class # <-- "Set"
-
+puts
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
 A_CONSTANT = 3.14
 A_CONSTANT = 1.6
 puts A_CONSTANT
+puts A_CONSTANT.class
 
 
 
@@ -231,6 +235,7 @@ puts
 load "RubyOrNotRuby.rb"
 
 
+
 # # # Multiline Comment 7:27
 =begin
 multiline comments in your script
@@ -241,15 +246,16 @@ and end with
 
 
 # # # If Elsif Else 7:42
-# Comparison Operators : == != < > <= >=
-# Logical Operators : && || ! (and, or, not)
-# NOTE: follow ELSE statements witth END!!!
+# Conditonals
+# NOTE: follow ALL IF statements with END!!!
 puts
 puts
 puts "**********IF ELSIF ELSE**********"
 puts
 puts
+
 age = 12
+
 if (age >= 5) && (age <= 6)
   puts "You're in Kindergarten"
 elsif (age >= 7) && (age <= 13)
@@ -259,21 +265,41 @@ else
   puts "Stay Home!"
 end
 
+# END not needed if IF is inline, e.g.
+# You can add condtions to the output that proceeds it:
+puts "You're Young" if age < 30
+
+
+
 # # # Comparison Operators 8:45
+# Comparison Operators: == != < > <= >= & <=> & unless
 puts
 puts
 puts "**********COMPARISON OPERATORS**********"
 puts
 puts
+# Comparison operator that returns 0 (equal),
+# 1 if 1st is greater, and
+# -1 if 1st is less than.
+puts "5 <=>  5 =  " + (5 <=> 5).to_s # <-- 0
+puts "10 <=> 5 =  " + (10 <=> 5).to_s # <-- 1
+puts "5 <=> 10 = " + (5 <=> 10).to_s # <-- -1
 
 
 
 # # # Logical Operators 8:59
+# Logical Operators: && || ! (and, or, not)
 puts
 puts
 puts "**********LOGICAL OPERATORS**********"
 puts
 puts
+puts "true && false = " + (true && false).to_s
+puts "true and false = " + (true and false).to_s
+puts "true || false = " + (true || false).to_s
+puts "true or false = " + (true or false).to_s
+puts "!false = " + (!false).to_s
+puts "not false = " + (not false).to_s
 
 
 
@@ -283,7 +309,14 @@ puts
 puts "**********UNLESS**********"
 puts
 puts
+# UNLESS is another comparison operator
+# UNLESS IS A NEGATED IF
 
+unless age > 4
+  puts "No school!"
+else
+  puts "Go to School."
+end
 
 
 # # # Case 10:58
@@ -292,6 +325,26 @@ puts
 puts "**********CASE**********"
 puts
 puts
+print "Enter Greeting: "
+# chomp removes the newline (\n) from input
+# NOTE that when you enter the input you hit return which is newline!
+
+greeting = gets.chomp
+
+# CASE is used when you have a limited number of options
+
+case greeting
+when "French", "french"
+  puts "Bonjour"
+  # without "end" Ruby executes this block then checks the next condition
+#   exit # NOTE EXIT ENDS THE PROGRAM
+when "Spanish", "spanish"
+  puts "Hola"
+#   exit # NOTE, I don't want to end this program :p
+# ELSE IS THE DEFAULT
+else
+  puts "Hello"
+end
 
 
 
@@ -301,6 +354,9 @@ puts
 puts "**********TERNARY OPERATORS**********"
 puts
 puts
+# SYNTAX: (condition) ? "Returned if true" : "Returned if false"
+age = 50
+puts (age >= 50) ? "Old" : "Young"
 
 
 
@@ -311,6 +367,15 @@ puts "**********LOOP NEXT BREAK**********"
 puts
 puts
 
+x = 1
+
+loop do
+  x += 1 # x += 1 is short for x = x + 1
+  next unless (x % 2) == 0 # SKIPS this iteration of the loop
+  puts x
+  break if x >= 10 # ENDS the LOOPING
+end
+
 
 
 # # # While 14:21
@@ -319,6 +384,25 @@ puts
 puts "**********WHILE**********"
 puts
 puts
+# Do stuff while the condition is met
+
+y = 1
+
+while y <= 10
+  y += 1
+  next unless (y % 2) ==0
+  puts y
+  break if y >= 10
+end
+puts
+z = 1
+
+begin
+  z += 1
+  next unless (z % 2) == 0
+  puts z
+  break if z >= 10
+end while z <=10
 
 
 
