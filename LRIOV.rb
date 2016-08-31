@@ -760,6 +760,92 @@ puts
 puts "**********CLASS OBJECTS**********"
 puts
 puts
+# Object oriented languages - we basically model real world objects
+# using classes & just like every day objects, objects are going to
+# have attributes which we will call INSTANCE VARIABLES as well as
+# capabilities which we will call METHODS.
+
+class Animal
+
+  # initialize is called when an Animal object is created
+  # you can set default values here.
+  def initialize
+    puts "Creating a New Animal"
+  end
+  
+  def set_name(new_name)
+    # Sets the value for an instance variable
+    @name = new_name
+  end
+  
+  def get_name
+    @name
+  end
+  
+  # Provides another way to GET the value for "name"
+  def name
+    @name
+  end
+  
+  # Provides another way to SET the value for "name"
+  def name=(new_name)
+    
+    # We can eliminate bad input in our SETTERS
+    if new_name.is_a?(Numeric)
+      puts "Name Can't Be A Number"
+    else
+      @name = new_name
+    end
+  end
+
+end
+
+# Creates a new Animal object
+cat = Animal.new
+puts
+
+# SETS the Animals name
+cat.set_name("Peekaboo")
+
+# GETS the Animal "name" - get_name returns the value of "name"
+puts cat.get_name
+puts
+
+# Using the alternative way of getting the name value
+puts cat.name
+puts
+
+# Using the alternative way of SETting a value for name
+cat.name = "Sophie"
+puts cat.name
+puts
+
+class Dog
+
+  # shortcut for creating all GETter functions
+  attr_reader :name, :height, :weight
+  
+  # shortcut for creating all SETter functions
+  attr_writer :name, :height, :weight
+  
+  # creater SETter and GETter methods (Use this one) - BUT WHY?
+  attr_accessor :name, :height, :weight
+  
+  def bark
+    return "Generic Bark"
+  end
+end
+
+rover = Dog.new
+rover.name = "Rover"
+puts rover.name
+puts
+puts rover.bark
+puts
+
+
+
+
 
 
 
