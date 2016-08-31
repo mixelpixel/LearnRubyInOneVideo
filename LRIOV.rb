@@ -191,7 +191,10 @@ puts Modularity # <-- "Modularity"\
 require 'set'
 s = Set.new
 puts s.class # <-- "Set"
+
+puts "a".to_sym.class # <-- "Symbol" (symbols are like immutable strings in Ruby)
 puts
+
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
 A_CONSTANT = 3.14
@@ -664,10 +667,16 @@ full_name_list = full_name.split(' ') # SPLITS into a list of strings
 p full_name_list
 full_name_no_spaces = full_name_list.join # JOINS a list of strings
 p full_name_no_spaces
+puts
 
+# Formatting Strings = The Number (argv[0]) = TOTAL number of spaces
+puts full_name.rjust(20, '.') # Right
+puts full_name.ljust(20, '.') # Left
+puts full_name.center(20, '.') # Center Justification
+puts full_name.rjust(40, '.') # Right
+puts full_name.ljust(40, '.') # Left
+puts full_name.center(40, '.') # Center Justification
 
-# ---------------------------------------
- 
 # Find all string methods by typing irb in terminal and "string".methods
 =begin
 irb(main):004:0> "string".methods
@@ -699,6 +708,49 @@ puts
 puts "**********CHOP CHOMP**********"
 puts
 puts
+
+# "chop" eliminates the last characters
+puts full_name.chop
+puts
+
+# "chomp" eliminates \n OR a specific string
+puts full_name.chomp
+puts full_name.chomp('as')
+puts
+
+# "delete" deletes provided characters
+puts full_name.delete("a")
+puts
+
+# Split a string into an array
+name_array = full_name.split(//)
+puts name_array
+p name_array
+puts
+name_array = full_name.split(/ /)
+puts name_array
+p name_array
+puts
+
+# String conversions
+puts "a".to_i
+puts "2".to_f
+puts "2".to_sym
+p "aeiou".to_sym
+umm = "aeiou".to_sym
+p umm.class
+
+# ESCAPE SEQUENCES
+# \\ Backslash
+# \' Single-quote
+# \" Double-quote
+# \a Bell
+# \b Backspace
+# \f Formfeed
+# \n Newline
+# \r Carriage Return
+# \t Tab
+# \v Vertical Tab
 
 
 
