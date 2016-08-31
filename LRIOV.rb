@@ -590,60 +590,80 @@ EOM
  
 puts multiline_string
 
+# CONCATENATION
 first_name = "Derek"
 last_name = "Banas"
-
-# CONCATENATION
 full_name = "CONCATENATION: " + first_name + " " + last_name
 puts full_name
-
-middle_name = "Justin"
+puts
 
 #INTERPOLATION
+middle_name = "Justin"
 full_name = "#{first_name} #{middle_name} #{last_name}"
 puts "INTERPOLATION: " + full_name
+puts
 
 # Does a string contain a string?
 puts "Does the full name include,: 'Justin'? " + full_name.include?("Justin").to_s
+puts
 
 # Get the length of a string
 puts "What is the full_name.size? " + full_name.size.to_s
+puts
 
 # Count the number of vowel
 puts "Vowels: " + full_name.count("aeiou").to_s
+puts
 
 # Count the number of consonants (not vowels with "^" the carrot)
 puts "Consonants: " + full_name.count("^aeiou").to_s #NOTE THE USE OF ^ The "CARROT SYMBOL
+puts
 
 # Check if a string starts with a string
 puts "Does " + full_name + " start with \"Banas\"? " + full_name.start_with?("Banas").to_s
+puts
 
 # Return the index for a match
 puts "Starting Index of 'Banas': " + full_name.index("Banas").to_s
+puts
 
 # Check the equality of strings
 puts "a == a: " + ("a" == "a").to_s
 puts "a == a is true" if "a" == "a" # CONDITIONAL IF printing
 puts "a == a is not false" unless "a" != "a" # CONDITIONAL UNLESS printing
+puts
 
 # Check if they are the same object
 puts "Same object? \"a\".equal?(\"a\"): " + ("a".equal?"a").to_s
-puts "Same object?" + first_name.equal?first_name.to_s
+puts "Same object?" + (first_name.equal?first_name).to_s
+puts
 
 #Changing Case
 puts full_name.upcase
 puts full_name.downcase
-puts fullname.swapcase
+puts full_name.swapcase
+puts
 
 # Stripping white space
 full_name = "       " + full_name
-full_name = full_name.lstrip
-full_name = full_name.rstrip
-full_name = full_name.strip
- 
-puts full_name
-
-
+p full_name
+full_name = full_name.lstrip # Strips off LEFT whitespaces
+p full_name
+puts
+full_name = full_name + "       "
+p full_name
+full_name = full_name.rstrip # Strips off RIGHT whitespaces
+p full_name
+puts
+full_name = "       " + full_name + "       "
+p full_name
+full_name = full_name.strip # Strips off ALL head and tail whitespaces
+p full_name
+puts
+full_name_list = full_name.split(' ') # SPLITS into a list of strings
+p full_name_list
+full_name_no_spaces = full_name_list.join # JOINS a list of strings
+p full_name_no_spaces
 
 
 # ---------------------------------------
