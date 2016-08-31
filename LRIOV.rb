@@ -925,13 +925,9 @@ class Scientist
 end
 
 einstein = Scientist.new
-
 einstein.name = "Albert"
-
 puts einstein.name
-
 einstein.run
-
 puts einstein.name + " says " + einstein.act_smart
 
 
