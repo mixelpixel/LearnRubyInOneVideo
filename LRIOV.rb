@@ -884,16 +884,19 @@ printf "%s goes %s \n", max.name, max.bark() # printf????? and there is sprintf.
 
 
 
-
-
 # # # Modules 34:23
 puts
 puts
 puts "**********MODULES**********"
 puts
 puts
-
-
+# Modules are made up of methods and variables, but they can't be instantiated
+# They are used to add functionality to a class (You can only inherit one class
+# but you can use any number of modules
+ 
+# These allow you access to the "human" module and the "smart" module (Ruby 2+)
+require_relative "human" # require_relative? or just require?
+require_relative "smart" # hmmm?
 
 
 
