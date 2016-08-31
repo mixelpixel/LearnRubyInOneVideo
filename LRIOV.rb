@@ -630,6 +630,19 @@ puts "a == a is not false" unless "a" != "a" # CONDITIONAL UNLESS printing
 puts "Same object? \"a\".equal?(\"a\"): " + ("a".equal?"a").to_s
 puts "Same object?" + first_name.equal?first_name.to_s
 
+#Changing Case
+puts full_name.upcase
+puts full_name.downcase
+puts fullname.swapcase
+
+# Stripping white space
+full_name = "       " + full_name
+full_name = full_name.lstrip
+full_name = full_name.rstrip
+full_name = full_name.strip
+ 
+puts full_name
+
 
 
 
