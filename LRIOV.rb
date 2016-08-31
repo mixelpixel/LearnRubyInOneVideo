@@ -543,17 +543,21 @@ rescue # NOTE: could also use rescue ZeroDivisionError
 end
 
 puts "#{first_num} / #{second_num} = #{answer}"
+puts
 
 # Also, we can throw our own exceptions with RAISE
-age = 12
+print "Enter an age number: "
+age = gets.to_i
 
 def check_age(age)
   raise ArgumentError, "Enter Positive Number" unless age > 0
 end
 
+# check_age(age)
+
 # And then catch them with RESCUE
 begin
-  check_age(-1)
+  check_age(age)
 rescue ArgumentError
   puts "That is an impossible age"
 end
@@ -576,7 +580,7 @@ puts
 puts 'Add Them #{4 + 5} \n\n'
 puts
 
-# A here-doc is normally used when you want a multiline string
+# A HERE-DOC is normally used when you want a multiline string
  
 multiline_string = <<EOM
 This is a very long string
@@ -585,7 +589,49 @@ like #{4 + 5} \n\n
 EOM
  
 puts multiline_string
- 
+
+first_name = "Derek"
+last_name = "Banas"
+
+# CONCATENATION
+full_name = "CONCATENATION: " + first_name + " " + last_name
+puts full_name
+
+middle_name = "Justin"
+
+#INTERPOLATION
+full_name = "#{first_name} #{middle_name} #{last_name}"
+puts "INTERPOLATION: " + full_name
+
+# Does a string contain a string?
+puts "Does the full name include,: 'Justin'? " + full_name.include?("Justin").to_s
+
+# Get the length of a string
+puts "What is the full_name.size? " + full_name.size.to_s
+
+# Count the number of vowel
+puts "Vowels: " + full_name.count("aeiou").to_s
+
+# Count the number of consonants (not vowels with "^" the carrot)
+puts "Consonants: " + full_name.count("^aeiou").to_s #NOTE THE USE OF ^ The "CARROT SYMBOL
+
+# Check if a string starts with a string
+puts "Does " + full_name + " start with \"Banas\"? " + full_name.start_with?("Banas").to_s
+
+# Return the index for a match
+puts "Starting Index of 'Banas': " + full_name.index("Banas").to_s
+
+# Check the equality of strings
+puts "a == a: " + ("a" == "a").to_s
+puts "a == a is true" if "a" == "a" # CONDITIONAL IF printing
+puts "a == a is not false" unless "a" != "a" # CONDITIONAL UNLESS printing
+
+# Check if they are the same object
+puts "Is \"a\".equal?(\"a\")? " + ("a".equal?"a").to_s
+puts  first_name.equal?first_name
+
+
+
 # ---------------------------------------
  
 # Find all string methods by typing irb in terminal and "string".methods
