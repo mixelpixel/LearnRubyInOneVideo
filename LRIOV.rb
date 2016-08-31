@@ -627,8 +627,9 @@ puts "a == a is true" if "a" == "a" # CONDITIONAL IF printing
 puts "a == a is not false" unless "a" != "a" # CONDITIONAL UNLESS printing
 
 # Check if they are the same object
-puts "Is \"a\".equal?(\"a\")? " + ("a".equal?"a").to_s
-puts  first_name.equal?first_name
+puts "Same object? \"a\".equal?(\"a\"): " + ("a".equal?"a").to_s
+puts "Same object?" + first_name.equal?first_name.to_s
+
 
 
 
