@@ -898,6 +898,41 @@ puts
 require_relative "human" # require_relative? or just require?
 require_relative "smart" # hmmm?
 
+module GrrAnimal # Normally you want modules in separate files
+  def make_sound
+    puts "Grrrrr"
+  end
+end
+
+# You can inherit a modules method with PREPEND or INCLUDE
+# You can inherit from numerous methods instead of one class
+
+class Dog
+  include GrrAnimal
+end
+
+rover = Dog.new
+rover.make_sound
+
+class Scientist
+  include Human
+  prepend Smart # Any methods in Smart will superseed those in the class
+  
+  def act_smart
+    return "E = mc^2"
+  end
+  
+end
+
+einstein = Scientist.new
+
+einstein.name = "Albert"
+
+puts einstein.name
+
+einstein.run
+
+puts einstein.name + " says " + einstein.act_smart
 
 
 
