@@ -62,6 +62,19 @@ single
 quotes'''
 puts "...this puts sentence makes a new line, because..."
 puts
+
+# printf does formatted printing (see also "sprintf")
+# %s for strings
+# %d for integers
+# %f for floats - %.3f would print a float with 3 decimals
+texty = 'A string of text'
+num = 100
+floater = 100 / 3.to_f
+printf """And there's printf formatting:
+%s and an integer %d, and a floating point number
+to the 3rd digit: %.3f\n""", texty, num, floater
+puts
+
 print """The 'print' command prints without a newline.
 For example, Enter a number: """
 
@@ -791,7 +804,7 @@ class Animal
   def name=(new_name)
     
     # We can eliminate bad input in our SETTERS
-    if new_name.is_a?(Numeric)
+    if new_name.is_a?(Numeric) # <--- Numeric, what other things like this are there in Ruby?
       puts "Name Can't Be A Number"
     else
       @name = new_name
@@ -845,16 +858,31 @@ puts
 
 
 
-
-
-
-
 # # # Inheritance 33:19
 puts
 puts
 puts "**********INHERITANCE**********"
 puts
 puts
+# When you INHERIT from another class you get all its methods and variables
+# You can only inherit from one class
+
+class GermanShepard < Dog
+
+  # You can overwrite methods as you need
+  
+  def bark
+    return "Loud Bark"
+  end
+end
+
+max = GermanShepard.new
+
+max.name = "Max"
+
+printf "%s goes %s \n", max.name, max.bark() # printf????? and there is sprintf...
+
+
 
 
 
@@ -864,6 +892,9 @@ puts
 puts "**********MODULES**********"
 puts
 puts
+
+
+
 
 
 
