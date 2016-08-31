@@ -638,7 +638,7 @@ puts
 
 # Check if they are the same object
 puts "Same object? \"a\".equal?(\"a\"): " + ("a".equal?"a").to_s
-puts "Same object?" + (first_name.equal?first_name).to_s
+puts "Same object? " + (first_name.equal?first_name).to_s
 puts
 
 #Changing Case
