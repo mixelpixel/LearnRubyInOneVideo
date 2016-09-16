@@ -996,6 +996,7 @@ puts :derek.object_id
 # Symbols are also used as keys for hashes
 
 
+
 # # # Arrays 41:26
 puts
 puts
@@ -1062,11 +1063,75 @@ array_4.concat([10, 20, 30])
 puts array_4.join(', ')
 puts
 
+# Array Methods
+puts "Array Size: " + array_4.size().to_s
+puts "Array Contains 100: " + array_4.include?(100).to_s
+puts "How Many 100s: " + array_4.count(100).to_s
+puts "Array Empty: " + array_4.empty?.to_s
+puts
+
+# Convert an array into a string
+puts array_4.join(', ')
+
+# Print and Inspect the array
+p array_4
+
+# Output array in loop
+array_4.each do |value|
+  puts value
+end
+puts
+
+
+
 # # # Hashes 45:43
 puts
 puts
 puts "**********HASHES**********"
 puts
+puts
+
+# A has is a collection of key:value object pairs
+
+number_hash = { "PI" => 3.14159,
+                "Golden" => 1.618,
+                "e" => 2.718}
+
+puts number_hash['PI']
+
+superheroes = Hash["Clark Kent", "Superman", "Bruce Wayne", "Batman"]
+
+puts superheroes['Clark Kent']
+
+# Add to a hash
+
+superheroes["Barry Allen"] = "Flash"
+puts superheroes["Barry Allen"]
+
+# Set a default key value
+sample_hash = Hash.new("No Such Key")
+puts sample_hash["Dog"]
+
+superheroines = Hash["Lisa Marie", "Aquagirl", "Betty Kane", "Batgirl"]
+
+# Combine 2 hashes in a DESTRUCTIVE way with update or
+# with no overwriting with merge
+superheroes.update(superheroines)
+
+# Print out each key and value
+superheroes.each do |key, value|
+  puts key.to_s + ' : ' + value.to_s
+end
+
+puts "Has Key Lisa Morel : " + superheroes.has_key?("Lisa Morel").to_s
+puts "Has Value Batman : " + superheroes.has_value?("Batman").to_s
+puts "Is Hash Empty : " + superheroes.empty?.to_s
+puts "Size of Hash : " + superheroes.size.to_s
+
+# Delete a key value
+superheroes.delete("Barry Allen")
+ 
+puts "Size of Hash : " + superheroes.size.to_s
 puts
 
 
