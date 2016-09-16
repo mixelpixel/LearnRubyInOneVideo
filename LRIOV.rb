@@ -167,8 +167,9 @@ puts
 big_float = 1.12345678901234 # 14 digits of accuracy is the norm
 puts big_float.to_s + " + \n0.00000000000005 = \n__________________\n" + 
      (big_float + 0.00000000000005).to_s
+puts
 
-     
+
 
 # # # Constants 5:23
 # NOTE: NOTES ON TYPE v CLASS
@@ -185,6 +186,7 @@ puts "A String".class # <-- "String"
 puts true.class # <-- "TrueClass"
 puts false.class # <-- "FalseClass"
 puts [1,2,3].class # <-- "Array"
+
 # NOTE: NOTES ON COLLECTION TYPES IN RUBY (Sets, 'Tuples', etc.)
 # http://6ftdan.com/allyourdev/2015/03/26/different-collection-types-in-ruby/
 hash_map = {1 => 'a', 2 => 'b', 3 => 'c'}
@@ -235,15 +237,20 @@ puts
 puts "**********BASIC FILE I/O**********"
 puts
 puts
+
 # Returns a file object for writing
 write_handler = File.new("LRIOV.txt", "w")
+
 # Put text into the file
 write_handler.puts("Look what I learned today!").to_s #WHY DO I NEED TO MAKE THIS A STRING?
+
 # ALWAYS REMEMBER TO CLOSE THE FILE
 write_handler.close
+
 # Read data from the defined file
 data_from_file = File.read("LRIOV.txt")
 puts "Data from file: " + data_from_file
+
 # NOW I am gonna make the file used in the next lesson:
 textual_healing = File.new("RubyOrNotRuby.rb", "w")
 textual_healing.puts('puts "Hello from RubyOrNotRuby.rb"').to_s
@@ -1152,7 +1159,7 @@ puts
 puts
 
 # Classes that include the ENUMERABLE module gain collection capabilities
-# but they must define a function called "each"
+# but they must define a function called "each" (to be used with inheritance)
 
 class Menu
   include Enumerable
@@ -1231,12 +1238,14 @@ file.close
 
 # Output everything in the file
 puts File.read("authors.out")
+puts
 
 # Open file for appending
 file = File.new("authors.out", "a")
 file.puts "Danielle Steel"
 file.close
 puts File.read("authors.out")
+puts
 
 # Create another file containing data separated by commas
 file = File.new("author_info.out", "w")
