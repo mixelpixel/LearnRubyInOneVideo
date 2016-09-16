@@ -1102,30 +1102,28 @@ puts
 puts
 
 # A has is a collection of key:value object pairs
-
 number_hash = { "PI" => 3.14159,
                 "Golden" => 1.618,
                 "e" => 2.718}
 
 puts number_hash['PI']
 
-superheroes = Hash["Clark Kent", "Superman", "Bruce Wayne", "Batman"]
+superheroes = Hash["Clark Kent", "Superman",
+                   "Bruce Wayne", "Batman"]
 
 puts superheroes['Clark Kent']
 
 # Add to a hash
-
 superheroes["Barry Allen"] = "Flash"
 puts superheroes["Barry Allen"]
 
-# Set a default key value
+# Set a default key value (return value when key not in hash)
 sample_hash = Hash.new("No Such Key")
 puts sample_hash["Dog"]
 
-superheroines = Hash["Lisa Marie", "Aquagirl", "Betty Kane", "Batgirl"]
-
 # Combine 2 hashes in a DESTRUCTIVE way with update or
-# with no overwriting with merge
+# with no overwriting with merge (but you might get duplicates)
+superheroines = Hash["Lisa Marie", "Aquagirl", "Betty Kane", "Batgirl"]
 superheroes.update(superheroines)
 
 # Print out each key and value
