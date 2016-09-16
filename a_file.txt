@@ -1,0 +1,2 @@
+a file is opened as an object of File class.
+Don't forget to close your files!

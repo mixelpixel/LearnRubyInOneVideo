@@ -198,7 +198,7 @@ puts a.class # <-- "Classy" - neat, huh?
 
 module Modularity
 end
-puts Modularity # <-- "Modularity"\
+puts Modularity # <-- "Modularity"
 
 # http://ruby-doc.org/stdlib-2.3.1/libdoc/set/rdoc/Set.html
 require 'set'
@@ -206,12 +206,22 @@ s = Set.new
 puts s.class # <-- "Set"
 
 puts "a".to_sym.class # <-- "Symbol" (symbols are like immutable strings in Ruby)
-puts :a.class
-puts
+puts :a.class # <-- "Symbol"
 
+A_CONSTANT_VARIABLE = nil
+puts A_CONSTANT_VARIABLE.class # <-- "NilClass"
+
+a_file = File.new("a_file.txt", "w")
+a_file.puts "a file is opened as an object of File class.\n\
+Don't forget to close your files!"
+a_file.close
+puts a_file.class  # <-- "File"
+
+puts
 
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
+puts "warning - Constant variable changes:"
 A_CONSTANT = 3.14
 A_CONSTANT = 1.6
 puts A_CONSTANT
@@ -1208,9 +1218,47 @@ puts "**********FILE I/O**********"
 puts
 puts
 
+# The class File provides for file manipulation
 
+# Create a file for writing
+file = File.new("authors.out", "w")
 
+# Add lines
+file.puts "Bill Shakespeare"
+file.puts "Agatha Christie"
+file.puts "Barbara Cartland"
 
+# Close file
+file.close
+
+# Output everything in the file
+puts File.read("authors.out")
+
+# Open file for appending
+file = File.new("authors.out", "a")
+file.puts "Danielle Steel"
+file.close
+puts File.read("authors.out")
+
+# Create another file containing data separated by commas
+file = File.new("author_info.out", "w")
+file.puts "William Shakespeare,English,plays and poetry,4 billion"
+file.puts "Agatha Christie,English,who done its,4 billion"
+file.puts "Barbara Cartland,English,romance novels,1 billion"
+file.puts "Danielle Steel,English,romance novel,800 million"
+file.close
+
+# Cycle through the data to write a sentence
+File.open("author_info.out") do |record|
+  record.each do |item|
+    
+    # Split each line into 4 parts based on commas
+    name, lang, specialty, sales = item.chomp.split(',')
+    puts "#{name} was an #{lang} author who specialized in #{specialty} and sold over #{sales} books."
+  end
+end
+
+puts
 
 =begin
 The End.
