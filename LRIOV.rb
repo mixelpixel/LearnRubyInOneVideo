@@ -206,7 +206,9 @@ s = Set.new
 puts s.class # <-- "Set"
 
 puts "a".to_sym.class # <-- "Symbol" (symbols are like immutable strings in Ruby)
+puts :a.class
 puts
+
 
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
@@ -939,6 +941,33 @@ puts "**********POLYMORPHISM**********"
 puts
 puts
 
+class Bird
+  def tweet(bird_type)
+    bird_type.tweet
+  end
+end
+
+class Cardinal < Bird
+  def tweet
+    puts "Tweet tweet"
+  end
+end
+
+class Parrot < Bird
+  def tweet
+    puts "Squawk"
+  end
+end
+
+# statically typed languages use DUCK TYPING to achieve polymorphism
+# RUBY pays less attention to the class type versus the methods that
+# can be called on it.
+
+generic_bird = Bird.new
+
+generic_bird.tweet(Cardinal.new)
+generic_bird.tweet(Parrot.new)
+
 
 
 # # # Symbols 40:11
@@ -948,6 +977,23 @@ puts "**********SYMBOLS**********"
 puts
 puts
 
+# Symbols are strings that can't be changed
+# You use them to conserve memory and to speed string comparisons
+# A symbol is a way to pass string data if:
+# 1) The string value won't change
+# 2) The string doesn't need access to string methods
+ 
+:derek # This is a symbol
+ 
+puts :derek
+puts :derek.to_s
+puts :derek.class
+puts :derek.object_id
+ 
+# Many core Ruby methods take symbols as arguments such as
+# attr_accessor :name, :height, :weight that we used earlier
+ 
+# Symbols are also used as keys for hashes
 
 
 # # # Arrays 41:26
@@ -957,7 +1003,64 @@ puts "**********ARRAYS**********"
 puts
 puts
 
+#Creating arrays
 
+array_1 = Array.new
+array_2 = Array.new(5) # gets nil as default
+array_3 = Array.new(5, "empty")
+array_4 = [1, 'two', 3, 5.5] # arrays can store multiple object types
+array_5 = 1,2,3,5,4,3,'eleven' # don't need the brackets to declare objects in an array
+
+puts array_1
+puts array_2
+puts array_3
+puts array_4
+puts array_5
+puts
+
+puts 'array_1: ' + array_1.to_s
+puts 'array_2: ' + array_2.to_s
+puts 'array_3: ' + array_3.to_s
+puts 'array_4: ' + array_4.to_s
+puts 'array_5: ' + array_5.to_s
+puts
+
+# Indexes start at 0
+puts array_4[2]
+puts
+
+# Return TWO values starting at the 2ND index
+puts array_4[2,2].join(', ')
+puts
+
+# Return values at indexes 0, 1, and 3
+puts array_4.values_at(0,1,3).join(', ')
+puts
+
+# Add 0 at the beginning of the array
+array_4.unshift(0)
+puts array_4.join(', ')
+puts
+
+# Remove the first item in the array
+array_4.shift()
+puts array_4.join(', ')
+puts
+
+# Add 100 and 200 to the end of the array
+array_4.push(100, 200)
+puts array_4.join(', ')
+puts
+
+# Remove item at the end of the array
+array_4.pop
+puts array_4.join(', ')
+puts
+
+# Add one array to the end of another
+array_4.concat([10, 20, 30])
+puts array_4.join(', ')
+puts
 
 # # # Hashes 45:43
 puts
