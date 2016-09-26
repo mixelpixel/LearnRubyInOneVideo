@@ -90,7 +90,7 @@ puts "**********GET INPUT with 'gets'**********"
 puts
 puts
 p first_num # NOTE: NO QUOTES WITH INTEGERS
-puts "You enetered: %s" % first_num
+puts "You entered: %s" % first_num
 puts "With gets.to_i is this a string? %s" % first_num.is_a?(String)
 puts "...or is this now an integer? %s" % first_num.is_a?(Fixnum)
 puts """Ruby doesn't have 'types' like Python
@@ -1266,6 +1266,9 @@ File.open("author_info.out") do |record|
 end
 
 puts
+
+
+
 
 =begin
 The End.
