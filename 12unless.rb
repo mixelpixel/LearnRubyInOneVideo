@@ -20,9 +20,25 @@ puts
 # UNLESS is another comparison operator
 # UNLESS IS A NEGATED IF
 
+puts "UNLESS is another comparison operator"
+puts "UNLESS IS A NEGATED IF"
+
+puts """
 unless age > 4
-  puts "No school!"
+  puts 'No more school for you!'
 else
-  puts "Go to School."
+  puts 'Go to School.'
 end
+"""
+
+print "Enter an age number: " 
+age = gets.to_i
+puts
+unless age > 4
+  puts "No more school for you!"
+else
+  puts "Go to School!"
+end
+puts
+
 

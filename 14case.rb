@@ -19,7 +19,16 @@ puts
 puts "**********TERNARY OPERATORS**********"
 puts
 puts
+
+puts "SYNTAX: (condition) ? \"Return if true\" : \"Return if false\""
+puts
+puts "e.g. puts (age >= 50) ? \"That's old\" : \"That's young\""
+
+print "Enter an age: "
+
 # SYNTAX: (condition) ? "Returned if true" : "Returned if false"
-age = 50
-puts (age >= 50) ? "Old" : "Young"
+age = gets.to_i
+puts (age >= 50) ? "That's old" : "That's young"
+puts
+
 

@@ -64,10 +64,16 @@ puts
 
 # A Constant starts with an uppercase letter and if you try to change the
 # value you will be warned
-puts "warning - Constant variable changes:"
+puts "Ruby provides a uarning when a CONSTANT variable changes in a script."
+puts "e.g. if you assigned A_CONSTANT = 3.14 and then later in the script"
+puts " changed that to  ...A_CONSTANT = 1.6, you get the following warning:"
+puts
 A_CONSTANT = 3.14
 A_CONSTANT = 1.6
-puts A_CONSTANT
-puts A_CONSTANT.class
+puts
+puts "The variable 'A_CONSTANT' has been updated to #{A_CONSTANT}"
+puts "...and you have been warned :)"
+puts
+puts "note: A_CONSTANT is a #{A_CONSTANT.class}"
 
 

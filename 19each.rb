@@ -19,6 +19,19 @@ puts "**********EACH DO |x|**********"
 puts
 puts
 
+puts "object.each do |x| is another syntax for FOR-LOOPS"
+puts
+puts "Technically FOR is syntactic sugar for the EACH method"
+puts
+puts """
+groceries = [\"bananas\", \"sweet potatoes\", \"pasta\", \"tomatoes\"]
+
+groceries.each do |food|
+  puts \"Get some \#{food}\"
+end
+
+"""
+puts
 groceries = ["bananas", "sweet potatoes", "pasta", "tomatoes"]
 
 groceries.each do |food|
@@ -36,5 +49,6 @@ puts
 (0...5).each do |i|
   puts "# #{i}"
 end
+
 
 

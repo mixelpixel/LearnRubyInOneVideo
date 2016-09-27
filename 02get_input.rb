@@ -10,6 +10,9 @@ Everything is an object and all of those objects can be overwritten(?what does t
 
 
 
+print """The 'print' command prints without a newline.
+For example, Enter a number: """
+
 
 # # # Get Input 1:47
 # Variables start with a lowercase letter (by convention) or _ and may contain numbers

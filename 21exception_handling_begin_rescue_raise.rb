@@ -33,6 +33,7 @@ begin
 
 rescue # NOTE: could also use rescue ZeroDivisionError
   puts "You can't divide by zero"
+  puts "#{first_num} / #{second_num} = #{answer.class}"
   # exit # optional
 end
 

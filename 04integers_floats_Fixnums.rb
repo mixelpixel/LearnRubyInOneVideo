@@ -18,10 +18,22 @@ puts "**********INTEGERS a.k.a. 'Fixnums'**********"
 puts "**********... and FLOATS**********"
 puts
 puts
+puts "the number 1 is written here in an integer format: 1"
+puts "the number one is written here in a decimal or floating-point format: 1.0"
+puts
+puts """the Object Ruby handles is either
+   a #{1.class} e.g. 1, 5, 77, 2397, etc...
+or a #{(1.0).class} e.g. 1.23, 666.003056, etc..."""
+
 num_one = 1.000
 num99 = 0.999 #NOTE: floating point numbers require a LEADING zero
-puts num_one.to_s + " - " + num99.to_s + " + " + (num_one - num99).to_s
+
 puts
+puts "1 - " + num99.to_s + " = " + (1 - num99).to_s
+puts
+puts num_one.to_s + " - " + num99.to_s + " = " + (num_one - num99).to_s
+puts
+
 big_float = 1.12345678901234 # 14 digits of accuracy is the norm
 puts big_float.to_s + " + \n0.00000000000005 = \n__________________\n" + 
      (big_float + 0.00000000000005).to_s

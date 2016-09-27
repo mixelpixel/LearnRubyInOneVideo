@@ -60,6 +60,8 @@ puts "2".to_sym
 p "aeiou".to_sym
 umm = "aeiou".to_sym
 p umm.class
+dumm = full_name.count("^aeiou").to_s
+p dumm
 
 # ESCAPE SEQUENCES
 # \\ Backslash

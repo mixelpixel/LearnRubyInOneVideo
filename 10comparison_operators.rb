@@ -18,10 +18,13 @@ puts
 puts "**********COMPARISON OPERATORS**********"
 puts
 puts
-# Comparison operator that returns 0 (equal),
-# 1 if 1st is greater, and
-# -1 if 1st is less than.
+puts"""\
+Comparison operator that returns 0 (equal),
+1 if 1st is greater, and
+-1 if 1st is less than."""
+puts
 puts "5 <=>  5 =  " + (5 <=> 5).to_s # <-- 0
 puts "10 <=> 5 =  " + (10 <=> 5).to_s # <-- 1
 puts "5 <=> 10 = " + (5 <=> 10).to_s # <-- -1
+puts
 

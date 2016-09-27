@@ -13,9 +13,37 @@ Everything is an object and all of those objects can be overwritten(?what does t
 puts
 puts
 puts "**********CASE**********"
+puts "*********& exit*********"
 puts
 puts
-print "Enter Greeting: "
+
+puts """
+print \"Enter 'French', 'Spanish' or something else for a greeting: \"
+# chomp removes the newline (\\n) from input
+# NOTE that when you enter the input you hit return which is newline!
+
+greeting = gets.chomp
+
+
+case greeting
+
+when \"French\", \"french\"
+  puts \"Bonjour\"
+  # without \"end\" Ruby executes this block then checks the next condition
+  exit # NOTE exit ENDS THE PROGRAM
+
+when \"Spanish\", \"spanish\"
+  puts \"Hola\"
+  exit # NOTE exit ENDS THE PROGRAM
+
+else # ELSE IS THE DEFAULT
+  puts \"Hello\"
+
+end
+"""
+
+
+print "Enter 'French', 'Spanish' or something else for a greeting: "
 # chomp removes the newline (\n) from input
 # NOTE that when you enter the input you hit return which is newline!
 
@@ -27,12 +55,13 @@ case greeting
 when "French", "french"
   puts "Bonjour"
   # without "end" Ruby executes this block then checks the next condition
-#   exit # NOTE EXIT ENDS THE PROGRAM
+  exit # NOTE EXIT ENDS THE PROGRAM
 when "Spanish", "spanish"
   puts "Hola"
-#   exit # NOTE, I don't want to end this program :p
+  exit # NOTE, I don't want to end this program :p
 # ELSE IS THE DEFAULT
 else
   puts "Hello"
 end
+
 

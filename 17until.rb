@@ -19,6 +19,7 @@ puts
 puts
 # Do stuff until a condition is met
 
+puts"""
 a = 1
 
 until a >= 10
@@ -26,4 +27,16 @@ until a >= 10
   next unless (a % 2) == 0
   puts a
 end
+"""
+
+a = 1
+
+until a >= 10
+  a += 1
+  next unless (a % 2) == 0
+  puts a
+end
+puts
+
+
 

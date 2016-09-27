@@ -19,15 +19,43 @@ puts "**********FOR LOOPS**********"
 puts
 puts
 
+puts"""
 numbers = 1,2,3,4,5
-# p numbers # Interesting: two ways to assign arrays
-# puts numbers # NOTE that p shows the array
-# puts numbers.class # and puts puts each number on a new line
-# nums = [1,2,3,4,5]
-# p nums
-# puts nums
-# print nums # and print prints the array (with no newline)
-# puts nums.class
+p numbers            # Interesting: two ways to assign arrays
+puts numbers         # NOTE that p shows the array
+puts numbers.class   # and puts puts each number on a new line
+nums = [1,2,3,4,5]
+p nums
+puts nums
+print nums           # and print prints the array (with no newline)
+puts nums.class
+
+for number in numbers
+  puts \"\#{number}, \"
+end
+
+for number in numbers
+  print \"\#{number}, \"
+end
+
+puts
+
+for number in numbers
+  puts \"#%s, \" % number
+end
+
+"""
+
+numbers = 1,2,3,4,5
+p numbers # Interesting: two ways to assign arrays
+puts numbers # NOTE that p shows the array
+puts numbers.class # and puts puts each number on a new line
+nums = [1,2,3,4,5]
+p nums
+puts nums
+print nums # and print prints the array (with no newline)
+puts nums.class
+
 for number in numbers
   puts "#{number}, "
 end

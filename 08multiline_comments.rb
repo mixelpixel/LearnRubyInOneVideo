@@ -10,10 +10,23 @@ Everything is an object and all of those objects can be overwritten(?what does t
 
 
 
+
+
 # # # Multiline Comment 7:27
 =begin
 multiline comments in your script
 start with "=begin"
 and end with
 =end
+
+puts """\
+=begin
+multiline
+comments
+in your script
+start with '=begin'
+and end with '=end'
+=end
+"""
+
 
